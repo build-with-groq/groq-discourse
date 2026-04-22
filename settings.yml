@@ -1,0 +1,491 @@
+enable_custom_js:
+  type: bool
+  default: true
+  description: "Enable custom JavaScript functionality"
+
+autofocus_search_banner:
+  type: bool
+  default: false
+  description: "Auto-focus the search input in the Advanced Search Banner when present"
+
+primary_brand_color:
+  type: string
+  default: "#1f8dd6"
+  description: "Primary brand color for the theme"
+  
+show_alert_banner:
+  type: bool
+  default: false
+  description: "Show a custom alert banner on the homepage"
+
+alert_banner_message:
+  type: string
+  default: "Important announcement: Check out our latest updates and features!"
+  description: "Message text for the alert banner"
+
+alert_banner_color:
+  type: string
+  default: "#f43e01"
+  description: "Background color for the alert banner (hex color)"
+
+alert_banner_cta_text:
+  type: string
+  default: "Learn More"
+  description: "Text for the call-to-action button"
+
+alert_banner_cta_url:
+  type: string
+  default: ""
+  description: "URL for the call-to-action button (can be relative like '/about' or external like 'https://example.com')"
+
+show_feature_banner:
+  type: bool
+  default: true
+  description: "show 1-3 feature banners"
+
+feature_banner_item_1_enabled:
+  type: bool
+  default: true
+  description: "Show the first feature banner"
+
+feature_banner_item_2_enabled:
+  type: bool
+  default: true
+  description: "Show the second feature banner"
+
+feature_banner_item_3_enabled:
+  type: bool
+  default: true
+  description: "Show the third feature banner"
+
+feature_banner_item_1_title:
+  type: string
+  default: "Fast & Powerful"
+  description: "Title for the first feature banner item"
+
+feature_banner_item_1_image:
+  type: string
+  default: ""
+  description: "Image URL for the first feature banner item (use relative path like 'assets/feature1.png' for local assets or full URL for external images)"
+
+feature_banner_item_1_bg:
+  type: string
+  default: "#ffffff"
+  description: "Background color for the first feature banner image area"
+
+feature_banner_item_1_url:
+  type: string
+  default: ""
+  description: "URL to link to when clicking the first feature banner item (can be relative like '/about' or external like 'https://example.com')"
+
+feature_banner_item_2_title:
+  type: string
+  default: "Community Driven"
+  description: "Title for the second feature banner item"
+
+feature_banner_item_2_image:
+  type: string
+  default: ""
+  description: "Image URL for the second feature banner item (use relative path like 'assets/feature2.png' for local assets or full URL for external images)"
+
+feature_banner_item_2_bg:
+  type: string
+  default: "#ffffff"
+  description: "Background color for the second feature banner image area"
+
+feature_banner_item_2_url:
+  type: string
+  default: ""
+  description: "URL to link to when clicking the second feature banner item (can be relative like '/about' or external like 'https://example.com')"
+
+feature_banner_item_3_title:
+  type: string
+  default: "Always Learning"
+  description: "Title for the third feature banner item"
+
+feature_banner_item_3_image:
+  type: string
+  default: ""
+  description: "Image URL for the third feature banner item (use relative path like 'assets/feature3.png' for local assets or full URL for external images)"
+
+feature_banner_item_3_bg:
+  type: string
+  default: "#ffffff"
+  description: "Background color for the third feature banner image area"
+
+feature_banner_item_3_url:
+  type: string
+  default: ""
+  description: "URL to link to when clicking the third feature banner item (can be relative like '/about' or external like 'https://example.com')"
+
+show_navigation_grid:
+  type: bool
+  default: true
+  description: "Show a customizable navigation grid with icons and links"
+
+nav_item_1_enabled:
+  type: bool
+  default: true
+  description: "Show the first navigation item"
+
+nav_item_2_enabled:
+  type: bool
+  default: true
+  description: "Show the second navigation item"
+
+nav_item_3_enabled:
+  type: bool
+  default: true
+  description: "Show the third navigation item"
+
+nav_item_4_enabled:
+  type: bool
+  default: true
+  description: "Show the fourth navigation item"
+
+nav_item_1_icon:
+  type: string
+  default: "💬"
+  description: "Emoji icon for the first navigation item"
+
+nav_item_1_title:
+  type: string
+  default: "Discussion Forum"
+  description: "Title for the first navigation item"
+
+nav_item_1_description:
+  type: string
+  default: "Ask questions, share ideas, and connect with the community"
+  description: "Description for the first navigation item"
+
+nav_item_1_url:
+  type: string
+  default: "/latest"
+  description: "URL for the first navigation item"
+
+nav_item_2_icon:
+  type: string
+  default: "🚀"
+  description: "Emoji icon for the second navigation item"
+
+nav_item_2_title:
+  type: string
+  default: "Groq API Tutorials"
+  description: "Title for the second navigation item"
+
+nav_item_2_description:
+  type: string
+  default: "Explore guides, examples, and tutorials"
+  description: "Description for the second navigation item"
+
+nav_item_2_url:
+  type: string
+  default: "/c/tutorials"
+  description: "URL for the second navigation item"
+
+nav_item_3_icon:
+  type: string
+  default: "📚"
+  description: "Emoji icon for the third navigation item"
+
+nav_item_3_title:
+  type: string
+  default: "Help Center"
+  description: "Title for the third navigation item"
+
+nav_item_3_description:
+  type: string
+  default: "Find answers to frequently asked questions"
+  description: "Description for the third navigation item"
+
+nav_item_3_url:
+  type: string
+  default: "/c/help"
+  description: "URL for the third navigation item"
+
+nav_item_4_icon:
+  type: string
+  default: "💡"
+  description: "Emoji icon for the fourth navigation item"
+
+nav_item_4_title:
+  type: string
+  default: "Feature Requests"
+  description: "Title for the fourth navigation item"
+
+nav_item_4_description:
+  type: string
+  default: "Submit and vote on new feature ideas"
+  description: "Description for the fourth navigation item"
+
+nav_item_4_url:
+  type: string
+  default: "/c/feature-requests"
+  description: "URL for the fourth navigation item"
+
+nav_item_1_span:
+  type: integer
+  default: 1
+  min: 1
+  max: 4
+  description: "Grid column span for the first navigation item (1-4)"
+
+nav_item_2_span:
+  type: integer
+  default: 1
+  min: 1
+  max: 4
+  description: "Grid column span for the second navigation item (1-4)"
+
+nav_item_3_span:
+  type: integer
+  default: 1
+  min: 1
+  max: 4
+  description: "Grid column span for the third navigation item (1-4)"
+
+nav_item_4_span:
+  type: integer
+  default: 1
+  min: 1
+  max: 4
+  description: "Grid column span for the fourth navigation item (1-4)"
+
+# Featured Posts (curated topic-like rows)
+show_featured_posts:
+  type: bool
+  default: false
+  description: "Show a curated list of up to 4 featured posts styled like topic rows"
+
+featured_posts_title:
+  type: string
+  default: "Featured Posts"
+  description: "Optional title displayed above the featured posts list"
+
+featured_post_1_enabled:
+  type: bool
+  default: true
+  description: "Show the first featured post"
+
+featured_post_1_url:
+  type: string
+  default: "/t/welcome/1"
+  description: "Topic URL for the first featured post (details fetched automatically from .json)"
+
+featured_post_2_enabled:
+  type: bool
+  default: true
+  description: "Show the second featured post"
+
+featured_post_2_url:
+  type: string
+  default: "/t/getting-started/2"
+  description: "Topic URL for the second featured post (details fetched automatically from .json)"
+
+featured_post_3_enabled:
+  type: bool
+  default: false
+  description: "Show the third featured post"
+
+featured_post_3_url:
+  type: string
+  default: "/t/api-changelog/3"
+  description: "Topic URL for the third featured post (details fetched automatically from .json)"
+
+featured_post_4_enabled:
+  type: bool
+  default: false
+  description: "Show the fourth featured post"
+
+featured_post_4_url:
+  type: string
+  default: "/t/showcase/4"
+  description: "Topic URL for the fourth featured post (details fetched automatically from .json)"
+
+show_categories_sidebar:
+  type: bool
+  default: true
+  description: "Show a customizable sidebar on the categories page"
+
+sidebar_intro_title:
+  type: string
+  default: "New to the community?"
+  description: "Title for the sidebar introduction section"
+
+sidebar_intro_text:
+  type: string
+  default: "If you're new to the community, please {introduce_link}! If you need help, {ask_link}, troubleshoot issues, or {share_link}!"
+  description: "Introduction text with placeholders for links: {introduce_link}, {ask_link}, {share_link}"
+
+sidebar_intro_link_1_text:
+  type: string
+  default: "introduce yourself"
+  description: "Text for the first inline link in introduction"
+
+sidebar_intro_link_1_url:
+  type: string
+  default: "/t/introduce-yourself"
+  description: "URL for the first inline link"
+
+sidebar_intro_link_2_text:
+  type: string
+  default: "ask the community"
+  description: "Text for the second inline link in introduction"
+
+sidebar_intro_link_2_url:
+  type: string
+  default: "/c/help"
+  description: "URL for the second inline link"
+
+sidebar_intro_link_3_text:
+  type: string
+  default: "share your project"
+  description: "Text for the third inline link in introduction"
+
+sidebar_intro_link_3_url:
+  type: string
+  default: "/c/showcase"
+  description: "URL for the third inline link"
+
+sidebar_quick_links:
+  type: string
+  default: "Youtube|https://youtube.com,Examples|/examples,API Cookbook|/cookbook"
+  description: "Quick links in format: Text|URL,Text|URL (comma separated)"
+
+sidebar_section_1_title:
+  type: string
+  default: "API Cookbook"
+  description: "Title for the first sidebar section"
+
+sidebar_section_1_description:
+  type: string
+  default: "Example code and guides for Groq API"
+  description: "Description for the first sidebar section"
+
+sidebar_section_1_url:
+  type: string
+  default: "/c/cookbook"
+  description: "URL for the first sidebar section"
+
+sidebar_section_2_title:
+  type: string
+  default: "Examples"
+  description: "Title for the second sidebar section"
+
+sidebar_section_2_description:
+  type: string
+  default: "Fully-developed apps from both our team and the Groq community"
+  description: "Description for the second sidebar section"
+
+sidebar_section_2_url:
+  type: string
+  default: "/c/examples"
+  description: "URL for the second sidebar section"
+
+sidebar_section_3_title:
+  type: string
+  default: "Docs"
+  description: "Title for the third sidebar section"
+
+sidebar_section_3_description:
+  type: string
+  default: "Get up and running with the Groq API"
+  description: "Description for the third sidebar section"
+
+sidebar_section_3_url:
+  type: string
+  default: "/docs"
+  description: "URL for the third sidebar section"
+
+sidebar_section_4_title:
+  type: string
+  default: ""
+  description: "Title for the fourth sidebar section"
+
+sidebar_section_4_description:
+  type: string
+  default: ""
+  description: "Description for the fourth sidebar section"
+
+sidebar_section_4_url:
+  type: string
+  default: ""
+  description: "URL for the fourth sidebar section"
+
+sidebar_section_5_title:
+  type: string
+  default: ""
+  description: "Title for the fifth sidebar section"
+
+sidebar_section_5_description:
+  type: string
+  default: ""
+  description: "Description for the fifth sidebar section"
+
+sidebar_section_5_url:
+  type: string
+  default: ""
+  description: "URL for the fifth sidebar section"
+# Footer Settings
+show_powered_by:
+  type: bool
+  default: true
+  description: "Show 'Community powered by Discourse' text in footer"
+
+show_back_to_top:
+  type: bool
+  default: true
+  description: "Show back to top button in footer"
+
+# Community Footer Links
+community_code_of_conduct_url:
+  type: string
+  default: "/guidelines"
+  description: "URL for Code of Conduct link in community footer section"
+
+community_about_url:
+  type: string
+  default: "/about"
+  description: "URL for About link in community footer section"
+
+community_privacy_url:
+  type: string
+  default: "/privacy"
+  description: "URL for Privacy link in community footer section"
+
+
+# Published Page Enhancements
+published_enable_customizations:
+  type: bool
+  default: true
+  description: "Enable Groqsters enhancements on Discourse Published Pages (body.published-page)"
+
+published_hide_default_header:
+  type: bool
+  default: false
+  description: "Hide the default published page header (we will still render a custom menu if enabled)"
+
+published_menu_links:
+  type: string
+  default: "Home|/, Forum|/latest, Docs|/docs"
+  description: "Top menu links for published pages in the format 'Text|URL, Text|URL'"
+
+published_enable_counter_demo:
+  type: bool
+  default: true
+  description: "Inject a simple counter demo widget on published pages for testing"
+
+published_gallery_images:
+  type: string
+  default: ""
+  description: "Optional comma-separated image URLs to render a simple photo gallery on published pages"
+
+published_spa_enabled:
+  type: bool
+  default: false
+  description: "Experimental: intercept clicks on published page menu links and dispatch a navigation event (for SPA-like behavior)"
+
+published_spa_link_selector:
+  type: string
+  default: ".groqsters-published-menu a"
+  description: "CSS selector for links to intercept when SPA is enabled"

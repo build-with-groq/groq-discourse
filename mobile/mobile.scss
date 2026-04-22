@@ -1,0 +1,537 @@
+// Groqsters Theme - Mobile Styles
+// Styles that apply only to mobile devices
+
+// Mobile banner container
+.groqsters-banners-container {
+  margin: 1rem 0;
+}
+
+// Mobile header adjustments
+.d-header {
+  .custom-header-text {
+    font-size: 0.9rem;
+    margin-left: 0.5em;
+  }
+}
+
+// Mobile-optimized welcome banner
+.welcome-banner {
+  margin: 1rem 0.5rem;
+  padding: 1.5rem 1rem;
+  border-radius: 0; // Keep full width on mobile like Vercel
+  
+  h2 {
+    font-family: var(--heading-font-family); // Use heading font family on mobile
+    font-size: 1.3rem;
+  }
+  
+  p {
+    font-size: 0.95rem;
+  }
+}
+
+// Mobile-specific banner for connector-based welcome banner
+.groqsters-welcome-banner {
+  // Ensure full width on mobile like Vercel
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  margin-bottom: 1rem;
+  padding: 1.5rem 0;
+  // Override background and add box shadow for mobile
+  background: var(--secondary) !important;
+  color: var(--primary) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .05) !important;
+  
+  // Ensure any potential title classes use heading font on mobile
+  .welcome-banner__title,
+  .banner-title,
+  .search-banner__title {
+    font-family: var(--heading-font-family) !important;
+  }
+  
+  .welcome-banner__inner-wrapper,
+  .custom-search-banner,
+  .welcome-banner__wrap {
+    padding: 0 1rem; // Reduce padding on mobile
+  }
+  
+  .custom-search-banner-headline {
+    font-family: var(--heading-font-family); // Use heading font family on mobile
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+  
+  // Mobile search styling
+  .search-menu.welcome-banner__search-menu {
+    .search-menu-container {
+      max-width: 100%;
+      padding: 0 1rem;
+      
+      .search-input-wrapper .search-input {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        border: 3px solid #f43e01; // Ensure orange border on mobile
+        background: var(--secondary);
+        
+        &:focus-within {
+          border-color: #ea580c;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), 0 0 0 2px rgba(249, 115, 22, 0.2);
+        }
+      }
+    }
+  }
+}
+
+// Mobile-optimized alert banner
+.groqsters-alert-banner {
+  margin: 1rem 0.5rem;
+  padding: 1rem;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.75rem;
+  
+  .alert-message {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  
+  .alert-cta {
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem 1rem;
+  }
+}
+
+// Mobile feature banner
+.groqsters-feature-banner,
+div.groqsters-feature-banner {
+  margin: 1rem 0 !important;
+  
+  .banner-grid,
+  div.banner-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+    padding: 0 0.5rem !important;
+  }
+  
+  .banner-item,
+  div.banner-item {
+    height: 150px !important; // Smaller height on mobile
+    
+    .banner-image,
+    div.banner-image {
+      img {
+        &:hover {
+          transform: none !important; // Disable hover scaling on mobile
+        }
+      }
+      
+      &.no-image::before {
+        width: 32px !important;
+        height: 32px !important;
+        margin: -16px 0 0 -16px !important;
+        border-width: 2px !important;
+      }
+      
+      &.loading::after {
+        width: 20px !important;
+        height: 20px !important;
+        margin: -10px 0 0 -10px !important;
+        border-width: 2px !important;
+      }
+    }
+    
+    h3 {
+      font-size: 0.9rem !important;
+      padding: 0.75rem !important;
+      line-height: 1.2 !important;
+    }
+    
+    // Disable hover effects on mobile
+    &:hover {
+      transform: none !important;
+      box-shadow: none !important;
+    }
+  }
+}
+
+// Mobile topic list optimizations
+.topic-list {
+  .topic-list-item {
+    padding: 1rem 0.5rem;
+    
+    .main-link {
+      .topic-title {
+        font-size: 1rem;
+        line-height: 1.4;
+      }
+    }
+    
+    &:hover {
+      transform: none; // Disable hover transforms on mobile
+    }
+  }
+}
+
+// Mobile navigation improvements
+.nav-pills {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 0.5rem;
+  
+  > li {
+    display: inline-block;
+    
+    > a {
+      padding: 0.5rem 1rem;
+      margin-right: 0.5rem;
+      
+      &:hover {
+        transform: none; // Disable hover transforms on mobile
+      }
+    }
+  }
+}
+
+// Mobile post optimizations
+.topic-post {
+  .post-menu-area {
+    opacity: 1; // Always show on mobile
+  }
+  
+  &:hover {
+    transform: none; // Disable hover effects on mobile
+    box-shadow: none;
+  }
+}
+
+// Mobile-specific button adjustments
+.btn-groqsters {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  
+  &:hover {
+    transform: none; // Disable hover transforms on mobile
+  }
+}
+
+// Fix for Discourse show-more notifications in grid layout
+.show-more {
+  position: relative !important; // Override absolute positioning
+  z-index: auto !important; // Reset z-index issues
+  width: 100% !important; // Ensure full width
+  order: -1 !important; // Place at top of grid when in flex/grid container
+  
+  .alert {
+    display: flex !important; // Ensure flex layout for content
+    align-items: center !important; // Center content vertically
+    justify-content: flex-start !important; // Align content to start
+    padding: 0.75rem 1rem !important; // Proper touch-friendly padding
+    min-height: 44px !important; // Touch target size
+    background: transparent !important; // Transparent background like other banners
+    border: 2px solid var(--groqsters-alert-color, #f43e01) !important; // Orange border to match theme
+    border-radius: 8px !important; // Rounded corners
+    color: var(--groqsters-alert-color, #f43e01) !important; // Orange text to match border
+    text-align: left !important; // Left align text
+    font-size: 0.9rem !important; // Readable font size
+    line-height: 1.4 !important; // Proper line height
+    
+    span {
+      display: block !important; // Ensure span shows
+      color: var(--groqsters-alert-color, #f43e01) !important; // Orange text to match theme
+      font-weight: 500 !important; // Make text slightly bold
+    }
+    
+    // Remove any transforms or transitions that might hide content
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  // When in categories grid layout, ensure proper integration
+  .categories-and-latest &,
+  .categories-only & {
+    grid-column: 1 / -1 !important; // Span full width of grid
+    margin-bottom: 1.5rem !important; // More space from grid content
+  }
+  
+  // Ensure visibility in contents area
+  .contents & {
+    position: static !important; // Normal document flow
+    display: block !important; // Block display
+    width: 100% !important; // Full width
+  }
+}
+
+// Mobile footer adjustments
+.custom-footer {
+  padding: 1.5rem 1rem;
+  
+  .footer-text {
+    font-size: 0.85rem;
+  }
+}
+
+// Touch-friendly improvements
+.topic-list-item,
+.nav-pills > li > a,
+.btn {
+  min-height: 44px; // Apple's recommended minimum touch target
+}
+
+// Mobile Cloudflare-style Category Grid
+.categories-and-latest,
+.categories-only {
+  .category-list {
+    grid-template-columns: 1fr !important; // Single column on mobile
+    gap: 1rem !important;
+    margin: 1rem 0 !important;
+    padding: 0 0.5rem !important;
+    
+    .category-list-item {
+      padding: 1rem !important;
+      border-radius: 8px !important;
+      
+      // Disable hover transforms on mobile
+      &:hover {
+        transform: none !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+      }
+      
+      td.category {
+        // Smaller text on mobile
+        .category-name {
+          font-size: 1.1rem !important;
+          // margin-bottom: 0.5rem !important;
+        }
+        
+        .category-description {
+          font-size: 0.85rem !important;
+          -webkit-line-clamp: 2 !important; // Show fewer lines on mobile
+          line-clamp: 2 !important;
+          margin-bottom: 0.75rem !important;
+        }
+      }
+    }
+  }
+  
+  // Latest topics section on mobile
+  .latest-topic-list-item,
+  .topic-list {
+    margin-top: 2rem !important;
+    
+    &::before {
+      font-size: 1.3rem !important;
+      margin-bottom: 1rem !important;
+    }
+  }
+}
+
+// Mobile category boxes
+.category-boxes,
+.category-boxes-with-topics {
+  grid-template-columns: 1fr !important; // Single column on mobile
+  gap: 1rem !important;
+  margin: 1rem 0 !important;
+  padding: 0 0.5rem !important;
+  
+  .category-box {
+    padding: 1rem !important;
+    border-radius: 8px !important;
+    
+    &:hover {
+      transform: none !important; // Disable hover effects on mobile
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    .category-box-heading h3 {
+      font-size: 1.1rem !important;
+      margin-bottom: 0.5rem !important;
+    }
+    
+    .category-description {
+      font-size: 0.85rem !important;
+      margin-bottom: 0.75rem !important;
+    }
+  }
+}
+
+// ============================================
+// MOBILE FOOTER OPTIMIZATIONS
+// ============================================
+
+.groqsters-footer {
+  // Mobile-specific adjustments
+  @media (max-width: 767px) {
+    .site-footer__contents {
+      padding: 2rem 1rem 1.5rem;
+    }
+    
+    .community-links-row {
+      .community-links {
+        .community-link {
+          min-height: 44px; // Touch target size
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+        }
+      }
+    }
+    
+    .footer-grid {
+      gap: 4rem 2rem;
+    
+      
+      .footer-links-group {
+        .footer-group-title {
+          font-size: 1rem;
+          margin-bottom: 1.25rem;
+          text-align: left;
+        }
+        
+        .footer-links-list {
+          text-align: left;
+          
+          .footer-link {
+            font-size: 1rem;
+            line-height: 1.6;
+            padding: 0.25rem 0;
+            display: inline-block;
+            // min-height: 44px; // Touch target size
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+          }
+        }
+      }
+    }
+    
+    .footer-bottom {
+      padding-top: 1.5rem;
+      gap: 1.5rem;
+      
+      .footer-legal {
+        p {
+          font-size: 0.875rem;
+          line-height: 1.5;
+          margin-bottom: 0.5rem;
+          
+          &:first-child {
+            margin-bottom: 0.5rem;
+          }
+        }
+        
+        .powered-by {
+          font-size: 0.8rem;
+        }
+      }
+    }
+    
+    .footer-social {
+      justify-content: flex-start;
+      gap: 1.5rem;
+      
+      .footer-social-link {
+        svg {
+          width: 2em;
+          height: 2em;
+        }
+        
+        .d-icon {
+          font-size: 2rem;
+        }
+      }
+    }
+
+  }
+  
+  // Small mobile devices (iPhone SE, etc.)
+  @media (max-width: 480px) {
+    .site-footer__contents {
+      padding: 1.5rem 0.75rem 1rem;
+    }
+    
+    .footer-grid {
+      gap: 1.5rem;
+      
+      .footer-branding {
+        .footer-logo {
+          .footer-site-title h3 {
+            font-size: 1.25rem;
+          }
+          
+          .footer-logo-img {
+            max-height: 2.5rem;
+          }
+        }
+        
+        .footer-tagline {
+          font-size: 0.9rem;
+        }
+      }
+      
+      .footer-links-group {
+        .footer-group-title {
+          font-size: 0.9rem;
+          margin-bottom: 1rem;
+        }
+        
+        .footer-links-list {
+          .footer-link {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+    
+    .footer-bottom {
+      .footer-legal p {
+        font-size: 0.8rem;
+      }
+    }
+    
+    .footer-social {
+      .footer-social-link {
+        width: 2.75rem;
+        height: 2.75rem;
+        
+        .d-icon {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}
+
+// Tablet portrait optimizations
+@media (max-width: 1023px) and (min-width: 768px) {
+  .groqsters-footer {
+    .site-footer__contents {
+      padding: 2.5rem 1.5rem 2rem;
+    }
+    
+    .footer-grid {
+      .footer-links-group {
+        .footer-group-title {
+          text-align: left;
+          margin-bottom: 1.25rem;
+        }
+        
+        .footer-links-list {
+          text-align: left;
+        }
+      }
+    }
+    
+    .footer-bottom {
+      .footer-social {
+        justify-content: flex-start;
+      }
+    }
+  }
+} 
