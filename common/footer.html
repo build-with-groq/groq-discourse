@@ -1,0 +1,634 @@
+<script>
+  // 
+  !function (t, e) { var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.crossOrigin = "anonymous", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "init Re Os As Pe Ms Fs capture Ve calculateEventProperties js register register_once register_for_session unregister unregister_for_session qs getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty zs Ls createPersonProfile Us Rs Bs opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing Ds debug I Ns getPageViewId captureTraceFeedback captureTraceMetric".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
+  console.log('initializing posthog')
+  posthog.init('phc_MrAAAWfjIrmzC8OHWp4uJWpv6lHCc4U2Hu8NDgyxCrl', {
+    api_host: 'https://phte.groq.io', // your managed reverse proxy domain
+    ui_host: 'https://us.i.posthog.com', // necessary because you're using a proxy, this way links will point back to PostHog properly
+    defaults: '2025-05-24',
+    person_profiles: 'identified_only', // or 'always' to create profiles for anonymous users as well
+    autocapture: false,
+    capture_pageview: false,
+    capture_pageleave: false,
+    capture_dead_clicks: false,
+    rageclick: false,
+    capture_exceptions: false,
+  })
+</script>
+
+
+<!-- Optional runtime overrides for published pages (no Ember/theme-setting interpolation) -->
+<script>
+  window.groqstersPublishedConfig = window.groqstersPublishedConfig || {
+    // Example:
+    // enabled: true,
+    // hideHeader: false,
+    // menuLinks: 'Home|/, Forum|/latest, Docs|/docs',
+    // counter: true,
+    // galleryImages: '',
+    // spaEnabled: false,
+    // spaSelector: '.groqsters-published-menu a',
+    // posthog: { enabled: false, apiKey: '', host: 'https://app.posthog.com', capturePageview: true }
+  };
+</script>
+
+<!-- No Alpine.data registration needed for non-CSP build test -->
+
+
+
+
+<footer class="site-footer groqsters-footer" role="contentinfo">
+  <div class="site-footer__contents container">
+
+    <!-- Main Footer Layout -->
+    <div class="main-footer-layout">
+      
+      <!-- Branding section on the left -->
+      <div class="footer-branding">
+        <div class="footer-logo">
+          <a href="https://groq.com/">
+            <svg viewBox="0 0 187 71" width="187" height="71" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M162.997.035c-6.426 0-12.464 2.505-17.005 7.057-4.533 4.543-7.024 10.581-7.011 16.994 0 13.25 10.773 24.03 24.016 24.03h6.811V35.382h-6.811c-6.226 0-11.29-5.067-11.29-11.296 0-6.23 5.064-11.296 11.29-11.296 2.829 0 5.536 1.057 7.626 2.974 2.016 1.853 3.601 4.333 3.601 7.067v46.022h12.727V24.086c0-13.261-10.746-24.05-23.954-24.05ZM111.402.035h-.004c-13.72 0-24.882 11.162-24.882 24.882s11.162 24.882 24.882 24.882c13.719 0 24.881-11.163 24.881-24.886C136.256 11.219 125.095.059 111.402.035Zm11.682 24.882c0 6.445-5.242 11.686-11.686 11.686-6.445 0-11.687-5.241-11.687-11.686s5.242-11.686 11.687-11.686c6.444 0 11.686 5.241 11.686 11.686ZM52.68 22.623c.054-1.469.18-2.895.459-4.341l.006-.03a22.607 22.607 0 0 1 1.604-4.88c1.476-3.14 3.656-5.908 6.31-8.014a24.557 24.557 0 0 1 8.81-4.423A24.384 24.384 0 0 1 74.647.11c3.584-.257 7.127.144 10.502 1.407 1.25.467 2.497 1.06 3.663 1.736L90.787 4.4l-6.335 11.02-1.977-1.102a11.367 11.367 0 0 0-4.4-1.39c-1.624-.146-3.3 0-4.873.43a11.302 11.302 0 0 0-4.113 2.083 9.367 9.367 0 0 0-2.624 3.344c-.636 1.378-.874 2.895-.874 4.402v24.93H52.68V22.624ZM48.188 23.462A23.94 23.94 0 0 0 40.954 6.85 23.897 23.897 0 0 0 24.211 0h-.204C10.866 0 .115 10.659.001 23.857-.055 30.285 2.387 36.352 6.88 40.94c4.494 4.592 10.496 7.15 16.923 7.207h7.324V35.396h-6.953a11.177 11.177 0 0 1-8.019-3.22 11.25 11.25 0 0 1-3.398-7.97c-.068-6.243 4.93-11.38 11.146-11.454h.3c6.206 0 11.283 5.08 11.319 11.312v22.259c0 6.16-5.015 11.232-11.18 11.312a11.04 11.04 0 0 1-7.815-3.308L14.91 52.69l-.007.006-6.506 11.491a23.568 23.568 0 0 0 15.807 6.198h.324c6.328-.09 12.264-2.62 16.716-7.13 4.449-4.509 6.918-10.488 6.952-16.85V23.466h-.007v-.003Z"></path>
+            </svg>
+            <span class="visually-hidden">Groq</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right section with community links and footer grid -->
+      <div class="footer-right-section">
+        
+        <!-- Community Links Row -->
+        <div class="community-links-row">
+          <div class="community-links">
+            <a href="/guidelines" class="community-link">Code of Conduct</a>
+            <a href="/about" class="community-link">About</a>
+            <a href="/privacy" class="community-link">Privacy Notice</a>
+          </div>
+        </div>
+
+        <!-- Footer Grid -->
+        <div class="footer-grid">
+          <!-- Platform & Solutions -->
+          <div class="footer-links-group">
+            <h4 class="footer-group-title">Platform &amp; Solutions</h4>
+            <ul class="footer-links-list">
+              <li><a href="https://groq.com/groqcloud" class="footer-link">GroqCloud</a></li>
+              <li><a href="https://groq.com/lpu-architecture" class="footer-link">LPU Architecture</a></li>
+              <li><a href="https://groq.com/pricing" class="footer-link">See Pricing</a></li>
+              <li><a href="https://groq.com/customer-stories" class="footer-link">Customer Stories</a></li>
+              <li><a href="https://groq.com/demos" class="footer-link">Demos</a></li>
+              <li><a href="https://groq.com/enterprise-access" class="footer-link">Enterprise Inquiry</a></li>
+            </ul>
+          </div>
+
+          <!-- Learn -->
+          <div class="footer-links-group">
+            <h4 class="footer-group-title">Learn</h4>
+            <ul class="footer-links-list">
+              <li><a href="https://groq.com/blog" class="footer-link">Blog</a></li>
+              <li><a href="https://groq.com/papers" class="footer-link">Whitepapers</a></li>
+              <li><a href="https://groq.com/subscribe" class="footer-link" target="_blank" rel="noopener noreferrer">Subscribe</a></li>
+            </ul>
+          </div>
+
+          <!-- About -->
+          <div class="footer-links-group">
+            <h4 class="footer-group-title">About</h4>
+            <ul class="footer-links-list">
+              <li><a href="https://groq.com/about-groq" class="footer-link">About Groq</a></li>
+              <li><a href="https://groq.com/newsroom" class="footer-link">Newsroom</a></li>
+              <li><a href="https://groq.com/life-at-groq" class="footer-link">Life at Groq</a></li>
+              <li><a href="https://groq.com/contact" class="footer-link">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Developers -->
+          <div class="footer-links-group">
+            <h4 class="footer-group-title">Developers</h4>
+            <ul class="footer-links-list">
+              <li><a href="https://console.groq.com/keys" class="footer-link" target="_blank" rel="noopener noreferrer">Free API key</a></li>
+              <li><a href="https://community.groq.com/" class="footer-link" target="_blank" rel="noopener noreferrer">Community</a></li>
+              <li><a href="https://console.groq.com/docs/overview" class="footer-link" target="_blank" rel="noopener noreferrer">Docs</a></li>
+            </ul>
+          </div>
+
+          <!-- Terms & Policies -->
+          <div class="footer-links-group">
+            <h4 class="footer-group-title">Terms &amp; Policies</h4>
+            <ul class="footer-links-list">
+              <li><a href="https://groq.com/terms-of-use" class="footer-link">Website Terms of Use (Updated)</a></li>
+              <li><a href="https://groq.com/privacy-policy" class="footer-link">Privacy Policy (Updated)</a></li>
+              <li><a href="https://trust.groq.com/faq" class="footer-link" target="_blank" rel="noopener noreferrer">Groq Trust Center</a></li>
+              <li><a href="https://groq.com/cookie-policy" class="footer-link">Cookie Notice (Updated)</a></li>
+              <li><a href="https://privacy.groq.com/" class="footer-link" target="_blank" rel="noopener noreferrer">Groq Privacy Portal</a></li>
+              <li><a href="https://console.groq.com/docs/legal" class="footer-link" target="_blank" rel="noopener noreferrer">GroqCloud Terms (Updated)</a></li>
+              <li><a href="https://console.groq.com/docs/legal/services-agreement" class="footer-link" target="_blank" rel="noopener noreferrer">Groq Services Agreement (Updated)</a></li>
+              <li><a href="https://groq.com/security" class="footer-link">Security</a></li>
+              <li><a href="https://groq.com/trademark-policy" class="footer-link">Trademark Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer bottom section -->
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <p>© 2025 Groq, Inc., All rights reserved.<br>
+        Community powered by <a href="https://www.discourse.org" target="_blank">Discourse</a></p>
+      </div>
+
+      <!-- Social media links -->
+      <div class="footer-social">
+        <a href="https://community.groq.com/" target="_blank" class="footer-social-link" title="Groq Community">
+          <svg width="1em" height="1em" viewBox="0 0 512 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M448 0H64C28.7 0 0 28.7 0 64v288c0 35.3 28.7 64 64 64h96v84c0 9.8 11.2 15.5 19.1 9.7L304 416h144c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64z"></path>
+          </svg>
+        </a>
+        <a href="https://x.com/groqinc" target="_blank" class="footer-social-link" title="Twitter">
+          <svg width="1em" height="1em" viewBox="0 0 36 36" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24.4701 8.0332H27.9202L20.3827 16.6109L29.25 28.2832H22.3069L16.8689 21.204L10.6465 28.2832H7.19431L15.2565 19.1084L6.75 8.0332H13.8693L18.7848 14.5039L24.4701 8.0332ZM23.2592 26.2271H25.1709L12.8305 9.98136H10.779L23.2592 26.2271Z"></path>
+          </svg>
+        </a>
+        <a href="https://www.youtube.com/c/GroqInc" target="_blank" class="footer-social-link" title="YouTube">
+          <svg width="1em" height="1em" viewBox="0 0 36 36" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M33.7878 10.3892C33.4255 9.02476 32.3578 7.95018 31.0022 7.58551C28.5451 6.92285 18.6923 6.92285 18.6923 6.92285C18.6923 6.92285 8.83965 6.92285 6.38248 7.58551C5.02688 7.95024 3.95923 9.02476 3.59686 10.3892C2.93848 12.8623 2.93848 18.0222 2.93848 18.0222C2.93848 18.0222 2.93848 23.182 3.59686 25.6551C3.95923 27.0196 5.02688 28.0494 6.38248 28.414C8.83965 29.0767 18.6923 29.0767 18.6923 29.0767C18.6923 29.0767 28.545 29.0767 31.0022 28.414C32.3578 28.0494 33.4255 27.0196 33.7878 25.6551C34.4462 23.182 34.4462 18.0222 34.4462 18.0222C34.4462 18.0222 34.4462 12.8623 33.7878 10.3892ZM15.4699 22.7069V13.3374L23.7049 18.0223L15.4699 22.7069Z"></path>
+          </svg>
+        </a>
+        <a href="https://www.threads.net/@groqinc" target="_blank" class="footer-social-link" title="Threads">
+          <svg width="1em" height="1em" viewBox="0 0 36 36" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M25.003 17.6309C24.8769 17.5709 24.7489 17.5131 24.6192 17.4578C24.3933 13.3223 22.1191 10.9548 18.3005 10.9306C18.2832 10.9305 18.266 10.9305 18.2487 10.9305C15.9647 10.9305 14.0651 11.8992 12.8959 13.662L14.9961 15.0934C15.8695 13.7767 17.2402 13.496 18.2497 13.496C18.2614 13.496 18.2731 13.496 18.2846 13.4961C19.542 13.5041 20.4907 13.8673 21.1048 14.5756C21.5517 15.0914 21.8506 15.804 21.9986 16.7034C20.8838 16.5151 19.6782 16.4572 18.3894 16.5307C14.7589 16.7385 12.4248 18.8424 12.5816 21.7658C12.6611 23.2487 13.4047 24.5245 14.6751 25.3579C15.7492 26.0624 17.1326 26.4069 18.5704 26.3289C20.4691 26.2255 21.9586 25.5057 22.9978 24.1895C23.787 23.19 24.2861 21.8947 24.5065 20.2626C25.4114 20.8052 26.082 21.5193 26.4524 22.3777C27.0822 23.8368 27.1189 26.2346 25.1499 28.1894C23.4247 29.9019 21.351 30.6428 18.2169 30.6656C14.7405 30.64 12.1113 29.5322 10.4019 27.373C8.80111 25.3511 7.97384 22.4307 7.94297 18.6928C7.97384 14.9548 8.80111 12.0344 10.4019 10.0125C12.1113 7.85326 14.7404 6.74547 18.2169 6.71981C21.7186 6.74567 24.3936 7.85879 26.1685 10.0284C27.0387 11.0924 27.6949 12.4304 28.1274 13.9905L30.5885 13.3381C30.0642 11.4178 29.2391 9.76307 28.1165 8.39074C25.8411 5.60915 22.5133 4.18385 18.2255 4.1543H18.2083C13.9292 4.18375 10.6387 5.61447 8.42812 8.40669C6.46101 10.8914 5.44631 14.3487 5.41222 18.6825L5.41211 18.6928L5.41222 18.703C5.44631 23.0367 6.46101 26.4942 8.42812 28.9789C10.6387 31.771 13.9292 33.2018 18.2083 33.2312H18.2255C22.0298 33.205 24.7114 32.2153 26.9205 30.0223C29.8107 27.1532 29.7237 23.5569 28.7711 21.3492C28.0877 19.766 26.7847 18.4802 25.003 17.6309ZM18.4344 23.7671C16.8432 23.8562 15.1901 23.1465 15.1086 21.6265C15.0482 20.4995 15.9158 19.2419 18.5321 19.0921C18.8317 19.0749 19.1257 19.0665 19.4145 19.0665C20.3648 19.0665 21.2539 19.1582 22.0621 19.3338C21.7606 23.0747 19.9923 23.6822 18.4344 23.7671Z"></path>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/company/groq" target="_blank" class="footer-social-link" title="LinkedIn">
+          <svg width="1em" height="1em" viewBox="0 0 36 36" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 4.5H28.5C30.1569 4.5 31.5 5.84314 31.5 7.5V28.5C31.5 30.1569 30.1569 31.5 28.5 31.5H7.5C5.84314 31.5 4.5 30.1569 4.5 28.5V7.5C4.5 5.84314 5.84314 4.5 7.5 4.5ZM12 27C12.4142 27 12.75 26.6642 12.75 26.25V15.75C12.75 15.3358 12.4142 15 12 15H9.75C9.33579 15 9 15.3358 9 15.75V26.25C9 26.6642 9.33579 27 9.75 27H12ZM10.875 13.5C9.63236 13.5 8.625 12.4926 8.625 11.25C8.625 10.0074 9.63236 9 10.875 9C12.1176 9 13.125 10.0074 13.125 11.25C13.125 12.4926 12.1176 13.5 10.875 13.5ZM26.25 27C26.6642 27 27 26.6642 27 26.25V19.35C27.0487 16.9662 25.2864 14.9318 22.92 14.64C21.2655 14.4889 19.6624 15.2616 18.75 16.65V15.75C18.75 15.3358 18.4142 15 18 15H15.75C15.3358 15 15 15.3358 15 15.75V26.25C15 26.6642 15.3358 27 15.75 27H18C18.4142 27 18.75 26.6642 18.75 26.25V20.625C18.75 19.3824 19.7574 18.375 21 18.375C22.2426 18.375 23.25 19.3824 23.25 20.625V26.25C23.25 26.6642 23.5858 27 24 27H26.25Z"></path>
+          </svg>
+        </a>
+        <a href="https://instagram.com/groqinc" target="_blank" class="footer-social-link" title="Instagram">
+          <svg width="1em" height="1em" viewBox="0 0 36 36" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M24 4.5H12C7.85787 4.5 4.5 7.85787 4.5 12V24C4.5 28.1421 7.85787 31.5 12 31.5H24C28.1421 31.5 31.5 28.1421 31.5 24V12C31.5 7.85787 28.1421 4.5 24 4.5ZM28.875 24C28.8668 26.6889 26.6889 28.8668 24 28.875H12C9.31103 28.8668 7.13323 26.6889 7.125 24V12C7.13323 9.31103 9.31103 7.13323 12 7.125H24C26.6889 7.13323 28.8668 9.31103 28.875 12V24ZM25.125 12.375C25.9534 12.375 26.625 11.7034 26.625 10.875C26.625 10.0466 25.9534 9.375 25.125 9.375C24.2966 9.375 23.625 10.0466 23.625 10.875C23.625 11.7034 24.2966 12.375 25.125 12.375ZM18 11.25C14.2721 11.25 11.25 14.2721 11.25 18C11.25 21.728 14.2721 24.75 18 24.75C21.728 24.75 24.75 21.728 24.75 18C24.754 16.2085 24.0441 14.4894 22.7774 13.2226C21.5106 11.9559 19.7915 11.246 18 11.25ZM13.875 18C13.875 20.2782 15.7218 22.125 18 22.125C20.2782 22.125 22.125 20.2782 22.125 18C22.125 15.7218 20.2782 13.875 18 13.875C15.7218 13.875 13.875 15.7218 13.875 18Z"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+
+
+  </div>
+</footer>
+
+
+
+<!-- discourse publishing hijacking system -->
+<div id="groqsters-pub-config"
+  hidden
+  data-enabled="{{theme-setting 'published_enable_customizations'}}"
+  data-hide-header="{{theme-setting 'published_hide_default_header'}}"
+  data-menu-links="{{theme-setting 'published_menu_links'}}"
+></div>
+
+<script>
+(function () {
+  function onReady(fn){ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fn);} else { fn(); } }
+
+  // Settings bridge with fallbacks for published pages
+  function readStr(cfg, key, fallback){ try{ var v = (cfg && cfg.dataset && cfg.dataset[key]) || ''; if (!v || v.indexOf('{{') === 0) return fallback; return v; } catch(e){ return fallback; } }
+  function readBool(cfg, key, fallback){ var v = readStr(cfg, key, ''); if(!v) return fallback; if(v.indexOf('{{')===0) return fallback; var s = String(v).toLowerCase(); if(s==='true' || s==='1' || s==='yes') return true; if(s==='false' || s==='0' || s==='no') return false; return fallback; }
+
+  // No framework loader (CSP-safe). All widgets are vanilla JS.
+
+  // Mount points
+  function getHeader(){ return document.querySelector('.published-page-header'); }
+  function getBodyContainer(){ return document.querySelector('.published-page-content-body'); }
+  function getWrapper(){ return document.querySelector('.published-page-content-wrapper'); }
+
+  // Menu
+  function parseLinksSetting(s){ var out=[]; if(!s) return out; s.split(',').forEach(function(e){ var p=e.split('|'); if(p.length>=2){ var t=(p[0]||'').trim(); var h=(p[1]||'').trim(); if(t&&h) out.push({text:t,href:h}); } }); return out; }
+  function buildMenu(links){ var existing=document.querySelector('.groqsters-published-menu'); if(existing) return existing; var nav=document.createElement('nav'); nav.className='groqsters-published-menu'; nav.style.display='block'; nav.style.width='100%'; var inner=document.createElement('div'); inner.className='groqsters-published-menu-inner'; inner.style.maxWidth='var(--published-max-width)'; inner.style.margin='0 auto'; inner.style.padding='0.5rem 0 1rem 0'; inner.style.display='flex'; inner.style.gap='1rem'; inner.style.flexWrap='wrap'; nav.appendChild(inner); links.forEach(function(it){ var a=document.createElement('a'); a.href=it.href; a.textContent=it.text; a.target=it.href.indexOf('http')===0?'_blank':'_self'; inner.appendChild(a); }); return nav; }
+  function injectMenu(links){ if(!links||!links.length) return; var menu=buildMenu(links); if(!menu) return; var header=getHeader(); if(header){ if(!header.nextSibling || header.nextSibling!==menu){ header.parentNode.insertBefore(menu, header.nextSibling); } } }
+
+  // Counter demo (vanilla) with localStorage persistence (scoped per page where possible)
+  function buildCounter(){
+    function deriveKey(){
+      try{
+        var suffix='global';
+        if(document && document.body){
+          var m = (document.body.className||'').match(/topic-(\d+)/);
+          if(m && m[1]) suffix='topic-'+m[1]; else suffix=(location && location.pathname) ? location.pathname : 'global';
+        }
+        return 'groqsters:counter:'+suffix;
+      }catch(e){ return 'groqsters:counter:global'; }
+    }
+    var storageKey = deriveKey();
+    function readStored(){ try{ var v = window.localStorage ? window.localStorage.getItem(storageKey) : null; var n = parseInt(v||'0',10); return isNaN(n)?0:n; }catch(e){ return 0; } }
+    function writeStored(n){ try{ if(window.localStorage) window.localStorage.setItem(storageKey, String(n)); }catch(e){} }
+
+    var outer=document.createElement('div');
+    outer.style.margin='1rem 0';
+    var root=document.createElement('div');
+    root.className='groqsters-counter';
+    var label=document.createElement('span'); label.textContent='Counter:';
+    var val=document.createElement('strong'); val.setAttribute('aria-live','polite'); val.textContent=String(readStored());
+    var inc=document.createElement('button'); inc.type='button'; inc.textContent='+';
+    inc.addEventListener('click', function(){ var cur=parseInt(val.textContent||'0',10)||0; var next=cur+1; val.textContent=String(next); writeStored(next); try{ window.dispatchEvent(new CustomEvent('groqsters:counter:changed',{detail:{value:next,key:storageKey}})); }catch(e){} });
+    root.appendChild(label); root.appendChild(val); root.appendChild(inc); outer.appendChild(root);
+    return outer;
+  }
+  function injectCounterDemo(enabled){ if(!enabled) return null; if(document.querySelector('.groqsters-counter')) return null; var body=getBodyContainer(); if(!body) return null; var node = buildCounter(); body.appendChild(node); return node; }
+
+  // Demo Cards Grid (3-col) with data sources
+  var DEMO_PLACEHOLDER_IMG = 'https://canada1.discourse-cdn.com/flex003/uploads/groq1/original/1X/900fb9a3f1a492df1ddfa9ff695bbc6918831754.png';
+  function getDemoCardsFallback(){
+    var fallback = [
+      { title: 'Stock Bot', description: 'AI chatbot that provides real-time stock data, charts, financials and market insights.', image: 'https://console.groq.com/templates/stockbot.png', imageFit: 'cover', username: 'Benjamin Klieger', avatarUrl: 'https://console.groq.com/groq-circle.png', github: 'https://github.com/bklieger-groq/stockbot-on-groq', demo: 'https://groq-stockbot.vercel.app/' },
+      { title: 'Starter Chatbot', description: 'Open-source AI chatbot app template built with Next.js, the AI SDK by Vercel, and Groq.', image: 'https://console.groq.com/templates/ai-sdk-starter-groq.png', imageFit: 'cover', username: 'Vercel', github: 'https://github.com/vercel-labs/ai-sdk-starter-groq', demo: 'https://ai-sdk-starter-groq.vercel.app/' },
+      { title: 'Blog Generator from Audio', description: "Generate structured blog posts from audio or video content using Groq's Whisper and Llama3 models.", image: 'https://console.groq.com/templates/blogwizard.png', imageFit: 'cover', username: 'Benjamin Klieger', avatarUrl: 'https://console.groq.com/groq-circle.png', github: 'https://github.com/groq/blogwizard', demo: 'https://blogwizard.groqlabs.com/' },
+      { title: 'Groq App Generator', description: 'An interactive web application that generates and modifies web applications in microseconds.', image: 'https://console.groq.com/showcase-applications/appgen.png', imageFit: 'cover', username: 'Rick Lamers, Jose Menendez, Benjamin Klieger', avatarUrl: 'https://console.groq.com/groq-circle.png', github: 'https://github.com/groq/groq-appgen', demo: 'https://appgen.groqlabs.com/' },
+      { title: 'Groq x Gradio Voice Assistant', description: 'Voice-powered AI application using Groq for realtime speech recognition and Gradio.', image: 'https://console.groq.com/showcase-applications/voiceapp.png', imageFit: 'cover', username: 'Hatice Ozen', avatarUrl: 'https://console.groq.com/groq-circle.png', github: 'https://github.com/groq/groq-api-cookbook/blob/main/tutorials/groq-gradio/groq-gradio-tutorial.ipynb' },
+      { title: 'Magic Spell', description: 'AI-powered text editor built with Next.js, Vercel AI SDK and Groq. Deploy your own AI text editor.', image: 'https://console.groq.com/showcase-applications/magic-spell.png', imageFit: 'cover', username: 'Ai-ng and Nick Oates', github: 'https://github.com/ai-ng/magic-spell', demo: 'https://magic-spell.vercel.app/' },
+      { title: 'Groq MCP Server', description: 'Query Groq models from Claude and other MCP clients through Model Context Protocol.', image: 'https://console.groq.com/showcase-applications/groq-mcp-server.png', imageFit: 'cover', username: 'Jan Zheng', avatarUrl: 'https://console.groq.com/groq-circle.png', github: 'https://github.com/groq/groq-mcp-server' },
+      { title: 'Groq Compound CLI', description: "An interactive command line interface for interacting with Groq's compound-beta system.", image: 'https://console.groq.com/showcase-applications/compound-cli.png', imageFit: 'cover', username: 'Benjamin Klieger', avatarUrl: 'https://console.groq.com/groq-circle.png', github: 'https://github.com/bklieger-groq/compound-cli' },
+      { title: 'Groq Desktop', description: "Local MCP client with MCP server support for all function calling capable models hosted on Groq.", image: 'https://console.groq.com/showcase-applications/groq-desktop-beta.png', imageFit: 'cover', username: 'Rick Lamers', avatarUrl: 'https://console.groq.com/groq-circle.png', github: 'https://github.com/groq/groq-desktop-beta' },
+      { title: 'Groq Compound MCP Server', description: 'MCP server for interacting with Groq models, including compound-beta and Llama 4 models.', image: 'https://console.groq.com/showcase-applications/groq-compound-mcp-server.png', imageFit: 'cover', username: 'Rick Lamers, John Barrus', avatarUrl: 'https://console.groq.com/groq-circle.png', github: 'https://github.com/groq/compound-mcp-server' }
+    ];
+    try {
+      var ext = (window.groqstersDemoCards && Array.isArray(window.groqstersDemoCards)) ? window.groqstersDemoCards : null;
+      return ext && ext.length ? ext : fallback;
+    } catch(e){ return fallback; }
+  }
+
+  function fetchDemoProjectCards(adapterName){
+    var url = 'https://groq-api-projects.val.run/';
+    return fetch(url, { method: 'GET', credentials: 'omit', mode: 'cors' })
+      .then(function(res){ if(!res || !res.ok) return null; return res.json(); })
+      .then(function(data){
+        if(!data || !Array.isArray(data.adapters)) return [];
+        var chosen = null;
+        if(adapterName){ for(var i=0;i<data.adapters.length;i++){ var a=data.adapters[i]; if(a && a.adapter===adapterName){ chosen=a; break; } } }
+        var items = [];
+        if(chosen && Array.isArray(chosen.items)) { items = chosen.items; }
+        else {
+          // fallback: flatten all adapters
+          for(var j=0;j<data.adapters.length;j++){ var ad=data.adapters[j]; if(ad && Array.isArray(ad.items)) items = items.concat(ad.items); }
+        }
+        var cards = [];
+        for(var k=0;k<items.length;k++){
+          var it = items[k] || {};
+          cards.push({
+            title: it.title || 'Untitled',
+            description: it.description || '',
+            image: it.image || '',
+            imageFit: it.imageFit || 'cover',
+            username: it.username || '',
+            avatarUrl: it.avatarUrl || '',
+            github: it.github || '',
+            demo: it.demo || ''
+          });
+        }
+        try { console.log('[groqsters] demo-cards fetch success adapter=%s count=%d', adapterName || '(all)', cards.length); } catch(e){}
+        return cards;
+      })
+      .catch(function(err){ try { console.warn('[groqsters] demo-cards fetch failed', err); } catch(e){} return []; });
+  }
+
+  function fetchAllDemoAdapters(){
+    var url = 'https://groq-api-projects.val.run/';
+    return fetch(url, { method: 'GET', credentials: 'omit', mode: 'cors' })
+      .then(function(res){ if(!res || !res.ok) return null; return res.json(); })
+      .then(function(data){
+        if(!data || !Array.isArray(data.adapters)) return [];
+        var out = [];
+        for(var i=0;i<data.adapters.length;i++){
+          var ad = data.adapters[i] || {};
+          var items = Array.isArray(ad.items) ? ad.items : [];
+          var mapped = [];
+          for(var j=0;j<items.length;j++){
+            var it = items[j] || {};
+            mapped.push({
+              title: it.title || 'Untitled',
+              description: it.description || '',
+              image: it.image || '',
+              imageFit: it.imageFit || 'cover',
+              username: it.username || '',
+              avatarUrl: it.avatarUrl || '',
+              github: it.github || '',
+              demo: it.demo || ''
+            });
+          }
+          out.push({
+            key: ad.adapter || ('adapter-' + i),
+            label: ad.label || '',
+            title: ad.title || (ad.adapter ? ad.adapter : 'Section ' + (i+1)),
+            description: ad.description || '',
+            source: ad.source || '',
+            sourceUrl: ad.sourceUrl || '',
+            items: mapped
+          });
+        }
+        try { console.log('[groqsters] demo-cards fetch ALL adapters=%d totalItems=%d', out.length, out.reduce(function(n,a){return n + (a.items? a.items.length:0);},0)); } catch(e){}
+        return out;
+      })
+      .catch(function(err){ try { console.warn('[groqsters] demo-cards fetch ALL failed', err); } catch(e){} return []; });
+  }
+  function buildDemoCardsGrid(cards){
+    var list = Array.isArray(cards) ? cards : [];
+    var grid = document.createElement('section');
+    grid.className = 'groqsters-demo-cards-grid';
+
+    function createCard(item){
+      var card = document.createElement('article');
+      card.className = 'groqsters-card';
+
+      var media = document.createElement('div');
+      media.className = 'groqsters-card-media';
+
+      var img = document.createElement('img');
+      var src = (item && item.image) ? item.image : DEMO_PLACEHOLDER_IMG;
+      img.src = src;
+      img.alt = (item && item.title) ? item.title : 'Card image';
+      if (item && item.image && item.imageFit === 'contain') {
+        img.className = 'is-contain';
+      }
+      media.appendChild(img);
+
+      var body = document.createElement('div');
+      body.className = 'groqsters-card-body';
+
+      var h = document.createElement('h3');
+      h.textContent = (item && item.title) ? item.title : 'Untitled';
+
+      var p = document.createElement('p');
+      p.textContent = (item && item.description) ? item.description : '';
+
+      body.appendChild(h);
+      body.appendChild(p);
+      // Optional action icons (GitHub, Live Demo) — moved into footer later
+      var hasGithub = item && typeof item.github === 'string' && item.github;
+      var hasDemo = item && typeof item.demo === 'string' && item.demo;
+
+      var hasFooter = item && (item.username || item.avatarUrl || hasGithub || hasDemo);
+      if(hasFooter){
+        var footer = document.createElement('div');
+        footer.className = 'groqsters-card-footer';
+
+        var left = document.createElement('div');
+        left.className = 'groqsters-card-footer-left';
+
+        if(item.avatarUrl){
+          var av = document.createElement('img');
+          av.src = item.avatarUrl;
+          av.alt = (item.username ? item.username + ' avatar' : 'avatar');
+          left.appendChild(av);
+        }
+        if(item.username){
+          var user = document.createElement('span');
+          user.textContent = item.username;
+          user.className = 'groqsters-card-username';
+          left.appendChild(user);
+        }
+
+        var right = document.createElement('div');
+        right.className = 'groqsters-card-footer-right';
+
+        function createIconifyLink(url, label, icon){
+          var a = document.createElement('a');
+          a.href = url;
+          a.title = label;
+          a.setAttribute('aria-label', label);
+          if (url.indexOf('http') === 0) { a.target = '_blank'; a.rel = 'noopener noreferrer'; }
+          var span = document.createElement('span');
+          span.className = 'iconify';
+          span.setAttribute('data-icon', icon);
+          span.setAttribute('aria-hidden', 'true');
+          a.appendChild(span);
+          return a;
+        }
+
+        if (hasGithub) right.appendChild(createIconifyLink(item.github, 'GitHub repository', 'mdi:github'));
+        if (hasDemo) right.appendChild(createIconifyLink(item.demo, 'Live demo', 'mdi:earth')); // mdi:world alternative is mdi:earth
+
+        footer.appendChild(left);
+        footer.appendChild(right);
+        card.appendChild(media);
+        card.appendChild(body);
+        card.appendChild(footer);
+      } else {
+        card.appendChild(media);
+        card.appendChild(body);
+      }
+      return card;
+    }
+
+    for(var i=0;i<list.length;i++){
+      var item = list[i];
+      grid.appendChild(createCard(item));
+    }
+    return grid;
+  }
+
+  function buildDemoSection(section){
+    var wrap = document.createElement('section');
+    wrap.className = 'groqsters-demo-section';
+
+    var header = document.createElement('div');
+    header.className = 'groqsters-demo-section-header';
+
+    var h2 = document.createElement('h2');
+    h2.textContent = section.title || section.label || 'Projects';
+    header.appendChild(h2);
+
+    if(section.description){
+      var desc = document.createElement('p');
+      desc.textContent = section.description;
+      header.appendChild(desc);
+    }
+
+    if(section.sourceUrl){
+      var link = document.createElement('a');
+      link.href = section.sourceUrl;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.textContent = section.source || 'Source';
+      header.appendChild(link);
+    }
+
+    var grid = buildDemoCardsGrid(section.items || []);
+    wrap.appendChild(header);
+    wrap.appendChild(grid);
+    return wrap;
+  }
+
+  function buildAllDemoSections(adapters){
+    var root = document.createElement('div');
+    root.className = 'groqsters-demo-sections';
+    for(var i=0;i<adapters.length;i++){
+      var sec = adapters[i];
+      if(!sec || !Array.isArray(sec.items) || sec.items.length===0) continue;
+      root.appendChild(buildDemoSection(sec));
+    }
+    return root;
+  }
+
+  function createDemoCardsNode(){
+    var root = document.createElement('div');
+    root.className = 'groqsters-demo-cards-root';
+    var override = (window.groqstersDemoCards && Array.isArray(window.groqstersDemoCards) && window.groqstersDemoCards.length) ? window.groqstersDemoCards : null;
+    var initial = override || getDemoCardsFallback();
+    var gridOrSections = buildDemoCardsGrid(initial);
+    root.appendChild(gridOrSections);
+    try { console.log('[groqsters] demo-cards initial source=%s count=%d', override ? 'override' : 'fallback', (initial && initial.length) || 0); } catch(e){}
+    if(!override){
+      var adapter = (window.groqstersDemoCardsAdapter) || ((window.groqstersPublishedConfig && window.groqstersPublishedConfig.demoCardsAdapter) ? window.groqstersPublishedConfig.demoCardsAdapter : 'all');
+      if(adapter === 'all'){
+        try { console.log('[groqsters] demo-cards fetching ALL adapters …'); } catch(e){}
+        fetchAllDemoAdapters().then(function(adapters){
+          if(adapters && adapters.length){
+            var sections = buildAllDemoSections(adapters);
+            try{ root.replaceChild(sections, gridOrSections); gridOrSections = sections; if(window.Iconify && window.Iconify.scan) window.Iconify.scan(sections); console.log('[groqsters] demo-cards replaced with ALL adapters sections=%d', adapters.length); }catch(e){}
+          } else {
+            try { console.log('[groqsters] demo-cards ALL returned no adapters; keeping initial grid'); } catch(e){}
+          }
+        });
+      } else {
+        try { console.log('[groqsters] demo-cards fetching adapter=%s …', adapter); } catch(e){}
+        fetchDemoProjectCards(adapter).then(function(cards){
+          if(cards && cards.length){
+            var newGrid = buildDemoCardsGrid(cards);
+            try{ root.replaceChild(newGrid, gridOrSections); gridOrSections = newGrid; if(window.Iconify && window.Iconify.scan) window.Iconify.scan(newGrid); console.log('[groqsters] demo-cards replaced with API data count=%d', cards.length); }catch(e){}
+          } else {
+            try { console.log('[groqsters] demo-cards API returned no items; keeping initial'); } catch(e){}
+          }
+        });
+      }
+    }
+    return root;
+  }
+
+  // Behavior
+  function applyHiding(hide){ if(!hide) return; var header=getHeader(); if(header) header.style.display='none'; }
+  function wireSpaNavigation(enabled, selector){ if(!enabled) return; var sel=selector||'.groqsters-published-menu a'; document.addEventListener('click', function(ev){ var path=ev.composedPath?ev.composedPath():[]; var a=null; for(var i=0;i<path.length;i++){ var el=path[i]; if(el && el.tagName==='A'){ a=el; break; } } if(!a){ var t=ev.target; if(t && t.closest) a=t.closest(sel); } if(!a || !a.matches(sel)) return; var href=a.getAttribute('href'); if(!href) return; if(href.indexOf('http')===0) return; ev.preventDefault(); window.history.pushState({},'',href); var evt=new CustomEvent('groqsters:spa:navigate',{detail:{href:href}}); window.dispatchEvent(evt); }, true); }
+
+  // Component registry: replace fake links with registered components
+  var groqstersComponents = window.groqstersComponents = window.groqstersComponents || (function(){
+    var registry = {};
+    var linkMap = {};
+    function register(name, builder){ if(name && typeof builder === 'function'){ registry[name] = builder; } }
+    function unregister(name){ if(name && registry[name]){ delete registry[name]; } }
+    function map(fakeHref, name){ if(fakeHref && name){ linkMap[fakeHref] = name; } }
+    function unmap(fakeHref){ if(fakeHref && linkMap[fakeHref]){ delete linkMap[fakeHref]; } }
+    function resolve(href){
+      if(!href) return null;
+      if(href.indexOf('component:') === 0){
+        var nm = href.slice('component:'.length);
+        if(registry[nm]) return nm;
+        return linkMap[nm] || null;
+      }
+      if(registry[href]) return href;
+      if(linkMap[href]) return linkMap[href];
+      return null;
+    }
+    function scan(root){
+      var container = root || getBodyContainer();
+      if(!container) return 0;
+      var anchors = container.querySelectorAll('a[href]');
+      var replaced = 0;
+      for(var i=0;i<anchors.length;i++){
+        var a = anchors[i];
+        if(!a) continue;
+        if(a.dataset && a.dataset.groqstersComponentProcessed) continue;
+        var href = a.getAttribute('href');
+        var key = resolve(href);
+        if(!key) continue;
+        var builder = registry[key];
+        if(typeof builder !== 'function') continue;
+        var node = builder({ anchor: a, href: href, name: key }) || null;
+        if(!node) continue;
+        // mark inserted node for later unmount, and preserve minimal original info
+        try{
+          if(node.setAttribute){
+            node.setAttribute('data-groqsters-component', key);
+            node.setAttribute('data-groqsters-original-href', href || '');
+            var text = (a.textContent || '').trim();
+            node.setAttribute('data-groqsters-original-text', text);
+          }
+        } catch(e){}
+        a.dataset.groqstersComponentProcessed = '1';
+        if(a.parentNode){ a.parentNode.replaceChild(node, a); replaced++; }
+      }
+      return replaced;
+    }
+    function unmount(name){
+      var selector = name ? '[data-groqsters-component="' + name + '"]' : '[data-groqsters-component]';
+      var nodes = document.querySelectorAll(selector);
+      var count = 0;
+      for(var j=0;j<nodes.length;j++){
+        var node = nodes[j];
+        if(!node || !node.parentNode) continue;
+        var href = node.getAttribute('data-groqsters-original-href') || '#';
+        var text = node.getAttribute('data-groqsters-original-text') || href;
+        var a = document.createElement('a');
+        a.href = href;
+        a.textContent = text;
+        node.parentNode.replaceChild(a, node);
+        count++;
+      }
+      return count;
+    }
+    function disable(){
+      // clear maps and registry (non-destructive to DOM); call unmount() beforehand if you want to restore anchors
+      registry = {};
+      linkMap = {};
+    }
+    return { registry: registry, links: linkMap, register: register, unregister: unregister, map: map, unmap: unmap, resolve: resolve, scan: scan, unmount: unmount, disable: disable };
+  })();
+
+  // Ensure Iconify is loaded on published pages (head_tag may not run on published)
+  function ensureIconifyLoaded(callback){
+    try{
+      if(window.Iconify && typeof window.Iconify.scan === 'function'){ if(callback) callback(); return; }
+      var existing = document.querySelector('script[src*="code.iconify.design/3/"]');
+      if(existing){ existing.addEventListener('load', function(){ try{ if(window.Iconify && window.Iconify.scan) window.Iconify.scan(); }catch(e){} if(callback) callback(); }); return; }
+      var s=document.createElement('script');
+      s.src='https://code.iconify.design/3/3.1.1/iconify.min.js';
+      s.defer=true; s.crossOrigin='anonymous';
+      s.addEventListener('load', function(){ try{ if(window.Iconify && window.Iconify.scan) window.Iconify.scan(); }catch(e){} if(callback) callback(); });
+      (document.head||document.body||document.documentElement).appendChild(s);
+    }catch(e){ if(callback) callback(); }
+  }
+ 
+  
+  function run(){ if(!document.body) return; var isPublished = document.body.classList.contains('published-page') || !!document.querySelector('.published-page-content-body'); if(!isPublished) return; var cfg=document.getElementById('groqsters-pub-config');
+    // Fall back to sensible defaults if theme settings aren't interpolated on published pages
+    var cfgWin = window.groqstersPublishedConfig || {};
+    var enabled = (typeof cfgWin.enabled === 'boolean') ? cfgWin.enabled : (cfg ? readBool(cfg, 'enabled', true) : true); if(!enabled) return;
+    var hideHeader = (typeof cfgWin.hideHeader === 'boolean') ? cfgWin.hideHeader : (cfg ? readBool(cfg, 'hideHeader', false) : false);
+    var linksStr = (typeof cfgWin.menuLinks === 'string') ? cfgWin.menuLinks : (cfg ? readStr(cfg, 'menuLinks', 'Home|/, Forum|/latest, Docs|/docs') : 'Home|/, Forum|/latest, Docs|/docs');
+    var counter = (typeof cfgWin.counter === 'boolean') ? cfgWin.counter : (cfg ? readBool(cfg, 'counter', true) : true);
+    var galleryStr = (typeof cfgWin.galleryImages === 'string') ? cfgWin.galleryImages : (cfg ? readStr(cfg, 'galleryImages', '') : '');
+    var spaEnabled = (typeof cfgWin.spaEnabled === 'boolean') ? cfgWin.spaEnabled : (cfg ? readBool(cfg, 'spaEnabled', false) : false);
+    var spaSelector = (typeof cfgWin.spaSelector === 'string') ? cfgWin.spaSelector : (cfg ? readStr(cfg, 'spaSelector', '.groqsters-published-menu a') : '.groqsters-published-menu a');
+
+    applyHiding(hideHeader);
+    injectMenu(parseLinksSetting(linksStr));
+    // injectCounterDemo(counter);
+    wireSpaNavigation(spaEnabled, spaSelector);
+    // Register default components and mappings, then scan for fake-link placeholders
+    groqstersComponents.register('counter', function(){ return buildCounter(); });
+    groqstersComponents.register('demo-cards', function(){ return createDemoCardsNode(); });
+    groqstersComponents.map('counter-component', 'counter');
+    groqstersComponents.map('https://counter-component', 'counter');
+    groqstersComponents.map('demo-cards', 'demo-cards');
+    groqstersComponents.map('https://demo-cards', 'demo-cards');
+    // Also support direct scheme: <a href="component:counter">...</a>
+    groqstersComponents.scan();
+    // Load Iconify and rescan so icons render
+    ensureIconifyLoaded(function(){ try{ if(window.Iconify && window.Iconify.scan) window.Iconify.scan(); }catch(e){} });
+    window.addEventListener('groqsters:spa:navigate', function(){ setTimeout(function(){ groqstersComponents.scan(); }, 50); });
+    console.log('[groqsters] published page enhancements applied (footer injector)');
+  }
+
+  onReady(run);
+})();
+</script>

@@ -1,0 +1,296 @@
+/* Published page enhanced layout: keep wrapper narrow, allow cards grid to span wider via CSS only */
+body.published-page {
+  /* If Discourse sets this variable, we reuse; default to 1040px but keep it adjustable */
+  --published-max-width: var(--published-max-width, 1040px);
+}
+
+.published-page-content-wrapper {
+  max-width: var(--published-max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.published-page-content-body {
+  font-size: 1rem !important;
+}
+
+/* Make our injected menu align with header width */
+.groqsters-published-menu {
+  width: 100%;
+}
+.groqsters-published-menu-inner {
+  max-width: var(--published-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.5rem 0 1rem 0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Wider-than-body demo cards: pure CSS responsive approach */
+.groqsters-demo-cards-grid {
+  /* default aligns to wrapper */
+  max-width: var(--published-max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* On large screens, gently expand beyond wrapper using viewport space */
+@media (min-width: 1000px) {
+  .groqsters-demo-cards-grid {
+    /* Expand up to 10vw on each side but cap to viewport with padding */
+    max-width: calc(var(--published-max-width) + 20vw);
+    // padding-left: 1rem;
+    // padding-right: 1rem;
+  }
+}
+
+/* On small screens, ensure full bleed fits and cards stack nicely */
+@media (max-width: 700px) {
+  .groqsters-demo-cards-grid {
+    max-width: 100%;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    grid-template-columns: 1fr !important;
+  }
+}
+// Styles specific to Discourse Published Pages (body.published-page)
+
+body.published-page {
+  // Optional: normalize spacing
+  --published-max-width: 1040px;
+
+  .published-page-header {
+    background: var(--secondary, #f7f7f9);
+    border-bottom: 1px solid var(--primary-low, #e6e6eb);
+    box-shadow: none;
+  }
+
+  .published-page-header-wrapper {
+    max-width: var(--published-max-width);
+    margin: 0 auto;
+    padding: 1.25rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .published-page-logo {
+    height: 32px;
+    width: auto;
+    display: block;
+    margin-right: 0 !important;
+  }
+
+  .published-page-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  // Groqsters custom top menu
+  .groqsters-published-menu {
+    background: var(--secondary, #fff);
+    // border-bottom: 1px solid var(--primary-low, #e6e6eb);
+  }
+
+  .groqsters-published-menu-inner {
+    max-width: var(--published-max-width);
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    padding-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .groqsters-published-menu a {
+    color: var(--primary, #000);
+    text-decoration: none;
+    padding: 0.375rem 0.625rem;
+    border-radius: 8px;
+    transition: var(--groqsters-transition, all 0.2s ease);
+  }
+
+  .groqsters-published-menu a:hover {
+    background: var(--primary-very-low, #f0f0f4);
+  }
+
+  // Content container normalization
+  // .container, .wrap { // Discourse published layout containers
+  //   max-width: var(--published-max-width);
+  //   margin: 0 auto;
+  //   padding: 1rem;
+  // }
+
+  // Simple gallery
+  .groqsters-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0 0;
+  }
+
+  .groqsters-gallery img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid var(--primary-low, #e6e6eb);
+  }
+
+  // Counter demo
+  .groqsters-counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid var(--primary-low, #e6e6eb);
+    padding: 0.375rem 0.625rem;
+    border-radius: 999px;
+    margin-top: 0.5rem;
+    background: var(--secondary, #fff);
+  }
+
+  /* Examples / Projects (Demo sections and cards) */
+  .groqsters-demo-sections {
+    display: block;
+  }
+
+  .groqsters-demo-section {
+    margin: 1.5rem 0 2rem 0;
+  }
+
+  .groqsters-demo-section-header {
+    max-width: var(--published-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.5rem;
+  }
+
+  // .groqsters-demo-section-header h2 {
+  //   font-size: 18px;
+  //   margin: 0 0 4px 0;
+  //   font-weight: 600;
+  // }
+
+  .groqsters-demo-section-header p {
+    // margin: 0 0 6px 0;
+    // color: #666;
+    // font-size: 13px;
+  }
+
+  .groqsters-demo-section-header a {
+    // font-size: 12px;
+    // color: #666;
+    // text-decoration: underline;
+    // display: inline-block;
+    // margin: 2px 0 6px 0;
+  }
+
+  .groqsters-demo-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin: 1rem 0;
+  }
+
+  .groqsters-card {
+    display: flex;
+    flex-direction: column;
+    height: 340px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+
+  .groqsters-card-media {
+    height: 140px;
+    background: #f8f8f8;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+  }
+
+  .groqsters-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .groqsters-card-media img.is-contain {
+    object-fit: contain;
+  }
+
+  .groqsters-card-body {
+    flex: 1 1 auto;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .groqsters-card-body h3 {
+    font-size: 16px;
+    margin: 0 0 6px 0;
+  }
+
+  .groqsters-card-body p {
+    font-size: 14px;
+    color: #444;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-height: 1.35;
+  }
+
+  .groqsters-card-footer {
+    margin-top: auto;
+    display: flex;
+    align-items: baseline;
+    padding: 10px 12px;
+    border-top: 1px solid #eee;
+  }
+
+  .groqsters-card-footer-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .groqsters-card-footer-left img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .groqsters-card-username {
+    font-size: 13px;
+    color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+
+  .groqsters-card-footer-right {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .groqsters-card-footer-right .iconify {
+    font-size: 22px;
+    color: #666;
+  }
+}
+
+
